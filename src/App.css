@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #010101;
+}
+
+h1 {
+  color: #682bd7;
+}
+
+button {
+  cursor: pointer;
+}
