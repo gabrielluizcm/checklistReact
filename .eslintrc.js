@@ -2,14 +2,10 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true,
-    node: true,
   },
   extends: [
-    'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended',
+    'airbnb',
   ],
   globals: {
     Atomics: 'readonly',
@@ -23,13 +19,12 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier', 'react-hooks'],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
+  plugins: [
+    'react',
+  ],
   rules: {
-    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': 0,
+    'react/state-in-constructor': 0,
+    'react/forbid-prop-types': 0,
   },
 };
