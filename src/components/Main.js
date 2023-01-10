@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import Form from './Form';
+import Items from './Items';
 import './Main.css';
 
-import { FaPlus, FaEdit, FaWindowClose } from 'react-icons/fa';
-
 export default class Main extends Component {
-  state = {
-    newItem: '',
-    items: [],
-    index: -1,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      newItem: '',
+      items: [],
+      index: -1,
+    };
+  }
 
   componentDidMount() {
     const items = JSON.parse(localStorage.getItem('items'));
@@ -83,24 +87,16 @@ export default class Main extends Component {
     return (
       <div className="main">
         <h1>CheckList</h1>
-        <form onSubmit={this.handleSubmit} className="form">
-          <input onChange={this.handleChange} type="text" value={newItem} />
-          <button type="submit">
-            {index === -1 ? <FaPlus /> : <FaEdit />}
-          </button>
-        </form>
 
-        <ul className="items">
-          {items.map((item, itemIndex) => (
-            <li key={item}>
-              {item}
-              <span>
-                <FaEdit onClick={(e) => this.handleEdit(e, itemIndex)} className="edit" />
-                <FaWindowClose onClick={(e) => this.handleDelete(e, itemIndex)} className="delete" />
-              </span>
-            </li>
-          ))}
-        </ul>
+        <Form
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          newItem={newItem}
+          index={index}
+        />
+
+        <Items handleEdit={this.handleEdit} handleDelete={this.handleDelete} items={items} />
+
       </div>
     );
   }

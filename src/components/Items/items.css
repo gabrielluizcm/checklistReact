@@ -1,0 +1,34 @@
+.items {
+  margin-top: 30px;
+}
+
+.items li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  transition: all 300ms;
+}
+
+.items li span {
+  display: flex;
+  align-items: center;
+}
+
+.items li:hover {
+  background: #ac73ff;
+}
+
+.items li .edit {
+  color: #51d6ca;
+}
+
+.items li .delete {
+  color: #c82b28;
+}
+
+.items li .edit,
+.items li .delete {
+  margin-right: 15px;
+  cursor: pointer;
+}
