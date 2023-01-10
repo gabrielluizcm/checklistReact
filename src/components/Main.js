@@ -10,6 +10,24 @@ export default class Main extends Component {
     index: -1,
   };
 
+  componentDidMount() {
+    const items = JSON.parse(localStorage.getItem('items'));
+
+    if (!items) return;
+
+    this.setState({
+      items,
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { items } = this.state;
+
+    if (items === prevState.items) return;
+
+    localStorage.setItem('items', JSON.stringify(items));
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     const { items, index } = this.state;
