@@ -8,6 +8,7 @@
   justify-content: space-between;
   padding: 10px;
   transition: all 300ms;
+  color: rgb(236, 236, 236);
 }
 
 .items li span {
@@ -20,7 +21,7 @@
 }
 
 .items li .edit {
-  color: #51d6ca;
+  color: #d7ad0d;
 }
 
 .items li .delete {
