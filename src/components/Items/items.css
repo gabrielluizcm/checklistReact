@@ -1,5 +1,13 @@
 .items {
   margin-top: 30px;
+  max-height: 20em;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.items::-webkit-scrollbar {
+  display: none;
 }
 
 .items li {

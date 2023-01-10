@@ -85,19 +85,26 @@ export default class Main extends Component {
   render() {
     const { newItem, items, index } = this.state;
     return (
-      <div className="main">
-        <h1>CheckList</h1>
+      <>
+        <div className="main">
+          <h1>CheckList</h1>
 
-        <Form
-          handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
-          newItem={newItem}
-          index={index}
-        />
+          <Form
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+            newItem={newItem}
+            index={index}
+          />
 
-        <Items handleEdit={this.handleEdit} handleDelete={this.handleDelete} items={items} />
+          <Items handleEdit={this.handleEdit} handleDelete={this.handleDelete} items={items} />
+        </div>
 
-      </div>
+        <footer>
+          Developed by
+          {' '}
+          <a href="https://github.com/gabrielluizcm">Gabriel Luiz</a>
+        </footer>
+      </>
     );
   }
 }

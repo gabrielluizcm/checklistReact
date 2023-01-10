@@ -1,14 +1,29 @@
 .main {
-  background-color: rgba(200, 100, 237, 0.44);
+  background-color: #70318e;
   padding: 30px;
-  margin: 50px auto;
-  max-width: 640px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 80%;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-height: 80vh;
 }
 
 .main h1 {
   font-size: 20px;
   text-align: center;
   color: rgb(236, 236, 236);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  background: #70318e;
+}
+
+footer a {
+  color: #d7ad0d;
 }
