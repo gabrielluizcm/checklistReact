@@ -5,12 +5,18 @@ import { FaEdit, FaWindowClose } from 'react-icons/fa';
 
 import './items.css';
 
-export default function Items({ handleEdit, handleDelete, items }) {
+export default function Items({
+  handleEdit, handleDelete, handleCheck, items, checks,
+}) {
   return (
     <ul className="items">
       {items.map((item, itemIndex) => (
-        <li key={item}>
-          {item}
+        <li key={item} className={checks[itemIndex] ? 'line-through' : ''}>
+          <span>
+            <input type="checkbox" onClick={(e) => handleCheck(e, itemIndex)} checked={checks[itemIndex]} />
+            {item}
+          </span>
+
           <span>
             <FaEdit onClick={(e) => handleEdit(e, itemIndex)} className="edit" />
             <FaWindowClose onClick={(e) => handleDelete(e, itemIndex)} className="delete" />
@@ -24,5 +30,7 @@ export default function Items({ handleEdit, handleDelete, items }) {
 Items.propTypes = {
   handleEdit: PropTypes.func.isRequired,
   handleDelete: PropTypes.func.isRequired,
+  handleCheck: PropTypes.func.isRequired,
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  checks: PropTypes.arrayOf(PropTypes.bool).isRequired,
 };

@@ -6,6 +6,10 @@
   -ms-overflow-style: none;
 }
 
+.line-through {
+  text-decoration: line-through;
+}
+
 .items::-webkit-scrollbar {
   display: none;
 }
@@ -22,6 +26,10 @@
 .items li span {
   display: flex;
   align-items: center;
+}
+
+.items li span input[type="checkbox"] {
+  margin-right: 10px;
 }
 
 .items li:hover {
